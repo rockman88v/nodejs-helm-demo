@@ -1,11 +1,24 @@
 {
-    "name": "gdgwpgk8s-hello",
-    "version": "0.0.0",
-    "private": true,
-    "scripts": {
-        "start": "node app.js"
-    },
-    "dependencies": {
-        "express": "~4.16.0"
-    }
+  "name": "gdgwpgk8s-hello",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~4.16.0"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rockman88v/nodejs-demo-k8s.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rockman88v/nodejs-demo-k8s/issues"
+  },
+  "homepage": "https://github.com/rockman88v/nodejs-demo-k8s#readme",
+  "description": ""
 }
