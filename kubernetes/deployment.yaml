@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment
+  labels:
+    app: node-app-viettq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-app-viettq
+  template:
+    metadata:
+      labels:
+        app: node-app-viettq
+    spec:
+      containers:
+        - name: node-app
+          image: myImage:new
+          resources:
+            # Specifying the resourses that we might need for our application
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
