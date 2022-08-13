@@ -31,6 +31,7 @@ docker push harbor.prod.viettq.com/demo/my-app:v1
 
 ### Step4: Deploy to k8s
 kubectl -n demo apply -f kubernetes/deployment.yaml
+
 kubectl -n demo apply -f kubernetes/service.yaml
 kubectl -n demo apply -f kubernetes/ingress.yaml
 (Change ingress host config to your domain if needed)
