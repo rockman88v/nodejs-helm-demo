@@ -53,3 +53,5 @@ Connect to your app from web browser with your workernode_ip:31123/
 or 
 
 curl WorkerNode_IP:31123/
+
+or using web browser to connect to hostname configured in ingress (kubernetes/ingress.yaml)
