@@ -17,9 +17,9 @@ app.get('/', (req, res) => {
             console.log('MY_POD_NAMESPACE: ' + process.env.MY_POD_NAMESPACE);
             console.log('MY_POD_NAME: ' + process.env.MY_POD_NAME);
             console.log('MY_POD_IP: ' + process.env.MY_POD_IP);
-            response.writeHead(200, { 'Content-Type': 'text/html' });
-            response.write(data);
-            response.end();
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.write(data);
+            res.end();
         } else {
             console.log(err);
         }
