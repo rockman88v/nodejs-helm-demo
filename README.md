@@ -49,9 +49,13 @@ kubectl -n demo apply -f kubernetes/ingress.yaml
 
 ### Step5: Verify
 Connect to your app from web browser with your workernode_ip:31123/
+![image](https://user-images.githubusercontent.com/63487262/184474127-4c2eb53f-fdf8-4d18-87cc-0ef061bcb625.png)
 
 or 
 
 curl WorkerNode_IP:31123/
 
 or using web browser to connect to hostname configured in ingress (kubernetes/ingress.yaml)
+
+![image](https://user-images.githubusercontent.com/63487262/184474146-4d03dac2-1186-4452-9423-884bf9ef27ab.png)
+
