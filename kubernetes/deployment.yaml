@@ -5,7 +5,7 @@ metadata:
   labels:
     app: node-app-viettq
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: node-app-viettq
