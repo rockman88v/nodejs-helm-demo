@@ -8,6 +8,7 @@ name: node-app-ingress
 labels:
   name: node-app-ingress
 spec:
+  ingressClassName: local
 rules:
   # Defining rules such as
   # Providing the cluster name, DNS_NAME (where we want this image to be visible)
@@ -22,4 +23,4 @@ rules:
               name: node-app-service
               port:
                 # Specifying the PORT to map with the service
-                number: 3000
+                number: 5000
