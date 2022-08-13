@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+# Specifying the kind as Ingress
+# because we want's to manage the external user to our service
+kind: Ingress
+metadata:
+# Naming our Ingress
+name: node-app-ingress
+labels:
+  name: node-app-ingress
+spec:
+rules:
+  # Defining rules such as
+  # Providing the cluster name, DNS_NAME (where we want this image to be visible)
+  - host: demo-node.prod.viettq.com
+    http:
+      paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              # Specifying the name of the service that the pods are using
+              name: node-app-service
+              port:
+                # Specifying the PORT to map with the service
+                number: 3000

@@ -53,10 +53,10 @@
         <h2>These are some information</h2>
 
         <p>Display information</p>
-        <p>PodName: </p>
-        <p>PodIP: </p>
-        <p>PVName: </p>
-        <p>DB_URL: </p>
+        <p>PodName: ${process.env.MY_NODE_NAME}</p>
+        <p>PodIP: ${process.env.MY_NODE_NAME}</p>
+        <p>Namespace: ${process.env.MY_POD_NAMESPACE}</p>
+        <p>NodeName: ${process.env.MY_NODE_NAME}</p>
         <p>DB_AccountName: </p>
         <p>DB_AccountPassword: </p>
 
