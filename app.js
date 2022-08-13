@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
             console.log('MY_POD_IP: ' + process.env.MY_POD_IP);
             var newData = data.replace(/MY_POD_NAME/g, process.env.MY_POD_NAME);
             newData = newData.replace(/MY_POD_IP/g, process.env.MY_POD_IP);
-            newData = newData.replace(/MY_POD_NAMESPACE/g, process.env.MY_POD_NAMESPACE);
+            newData = newData.replace(/MY_NAME_SPACE/g, process.env.MY_POD_NAMESPACE);
             newData = newData.replace(/MY_NODE_NAME/g, process.env.MY_NODE_NAME);
             newData = newData.replace(/MY_POD_SERVICE_ACCOUNT/g, process.env.MY_POD_SERVICE_ACCOUNT);
             res.writeHead(200, { 'Content-Type': 'text/html' });
