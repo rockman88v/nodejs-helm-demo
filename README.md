@@ -26,17 +26,23 @@ sudo npm install
 
 ### Step3: Build docker image and push to registry 
 docker build -t harbor.prod.viettq.com/demo/my-app:v1 .
+
 docker push harbor.prod.viettq.com/demo/my-app:v1
+
 (Change to registry information to your registry)
 
 ### Step4: Deploy to k8s
 kubectl -n demo apply -f kubernetes/deployment.yaml
 
 kubectl -n demo apply -f kubernetes/service.yaml
+
 kubectl -n demo apply -f kubernetes/ingress.yaml
+
 (Change ingress host config to your domain if needed)
 
 ### Step5: Verify
 Connect to your app from web browser with your workernode_ip:31123/
+
 or 
+
 curl WorkerNode_IP:31123/
