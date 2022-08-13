@@ -1,0 +1,41 @@
+# A demo of deploying a Nodejs Application in Kubernetes
+This repo includes app.js file which provide 3 api and response html output format
+Dockerfile is included to build Docker Image, this will be used to deploy the app to k8s
+
+## The idea
+### App.js
+The main app (app.js) provide 3 api and get some environment variables:
+MY_NODE_NAME
+MY_POD_NAMESPACE
+MY_POD_NAME
+MY_POD_IP
+These variables will be set during deployment in k8s.
+I use these variables and update to relevant parameter in index.html before response to client (by using string replace)
+
+### Deployment step
+- Build your nodejs app
+- Build docker images (using Dockerfile included in this repo)
+- Push the image to your registry 
+- Deploy the app to k8s using yaml manifest files (deployment.yaml, service.yaml and ingress.yaml) 
+
+## Detail guild
+### Step1: Install docker, nodejs, npm on your machine where you store and build your app
+
+### Step2: Build the app
+sudo npm install
+
+### Step3: Build docker image and push to registry 
+docker build -t harbor.prod.viettq.com/demo/my-app:v1 .
+docker push harbor.prod.viettq.com/demo/my-app:v1
+(Change to registry information to your registry)
+
+### Step4: Deploy to k8s
+kubectl -n demo apply -f kubernetes/deployment.yaml
+kubectl -n demo apply -f kubernetes/service.yaml
+kubectl -n demo apply -f kubernetes/ingress.yaml
+(Change ingress host config to your domain if needed)
+
+### Step5: Verify
+Connect to your app from web browser with your workernode_ip:31123/
+or 
+curl WorkerNode_IP:31123/

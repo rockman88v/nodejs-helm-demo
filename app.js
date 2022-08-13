@@ -21,8 +21,9 @@ app.get('/', (req, res) => {
             newData = newData.replace(/MY_POD_IP/g, process.env.MY_POD_IP);
             newData = newData.replace(/MY_POD_NAMESPACE/g, process.env.MY_POD_NAMESPACE);
             newData = newData.replace(/MY_NODE_NAME/g, process.env.MY_NODE_NAME);
+            newData = newData.replace(/MY_POD_SERVICE_ACCOUNT/g, process.env.MY_POD_SERVICE_ACCOUNT);
             res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.write(data);
+            res.write(newData);
             res.end();
         } else {
             console.log(err);
