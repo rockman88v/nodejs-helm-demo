@@ -1,15 +1,22 @@
 # A demo of deploying a Nodejs Application in Kubernetes
 This repo includes app.js file which provide 3 api and response html output format
+
 Dockerfile is included to build Docker Image, this will be used to deploy the app to k8s
 
 ## The idea
 ### App.js
 The main app (app.js) provide 3 api and get some environment variables:
+
 MY_NODE_NAME
+
 MY_POD_NAMESPACE
+
 MY_POD_NAME
+
 MY_POD_IP
+
 These variables will be set during deployment in k8s.
+
 I use these variables and update to relevant parameter in index.html before response to client (by using string replace)
 
 ### Deployment step
