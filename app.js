@@ -9,14 +9,8 @@ app.listen(port, () => {
     console.log('listening for request on port 8080');
 });
 app.get('/', (req, res) => {
-    console.log('request made');
-    res.sendFile("./documents/index.html", { root: __dirname })
-});
-app.get('/about', (req, res) => {
-    res.sendFile('./documents/about.html', { root: __dirname });
-});
-app.get('/about-us', (req, res) => {
-    //res.redirect('/about');
+    //console.log('request made');
+    //res.sendFile("./documents/index.html", { root: __dirname })
     fs.readFile(filePath, { encoding: 'utf-8' }, function (err, data) {
         if (!err) {
             //console.log('received data: ' + data);
@@ -30,6 +24,12 @@ app.get('/about-us', (req, res) => {
             console.log(err);
         }
     });
+});
+app.get('/about', (req, res) => {
+    res.sendFile('./documents/about.html', { root: __dirname });
+});
+app.get('/about-us', (req, res) => {
+    res.redirect('/about');
 });
 app.use((req, res) => {
     res.status(404).sendFile('./documents/404.html', { root: __dirname });
