@@ -25,7 +25,7 @@ I use these variables and update to relevant parameter in index.html before resp
 - Push the image to your registry 
 - Deploy the app to k8s using yaml manifest files (deployment.yaml, service.yaml and ingress.yaml) 
 
-## Detail guild
+## Detail guide
 ### Step1: Install docker, nodejs, npm on your machine where you store and build your app
 
 ### Step2: Build the app
