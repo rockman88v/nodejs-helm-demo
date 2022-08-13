@@ -17,10 +17,10 @@ app.get('/', (req, res) => {
             console.log('MY_POD_NAMESPACE: ' + process.env.MY_POD_NAMESPACE);
             console.log('MY_POD_NAME: ' + process.env.MY_POD_NAME);
             console.log('MY_POD_IP: ' + process.env.MY_POD_IP);
-            var newData = data.replace(MY_POD_NAME, process.env.MY_POD_NAME);
-            newData = newData.replace(MY_POD_IP, process.env.MY_POD_IP);
-            newData = newData.replace(MY_POD_NAMESPACE, process.env.MY_POD_NAMESPACE);
-            newData = newData.replace(MY_NODE_NAME, process.env.MY_NODE_NAME);
+            var newData = data.replace(/MY_POD_NAME/g, process.env.MY_POD_NAME);
+            newData = newData.replace(/MY_POD_IP/g, process.env.MY_POD_IP);
+            newData = newData.replace(/MY_POD_NAMESPACE/g, process.env.MY_POD_NAMESPACE);
+            newData = newData.replace(/MY_NODE_NAME/g, process.env.MY_NODE_NAME);
             res.writeHead(200, { 'Content-Type': 'text/html' });
             res.write(data);
             res.end();

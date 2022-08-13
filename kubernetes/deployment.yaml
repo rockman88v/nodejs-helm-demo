@@ -17,6 +17,7 @@ spec:
       containers:
         - name: node-app
           image: harbor.prod.viettq.com/demo/my-app:v1
+          imagePullPolicy: Always
           resources:
             # Specifying the resourses that we might need for our application
             limits:
